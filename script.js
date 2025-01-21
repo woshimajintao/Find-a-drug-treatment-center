@@ -106,8 +106,8 @@ function clearMarkers() {
 document.getElementById("location-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const country = document.getElementById("country").value;
-    const city = document.getElementById("city").value;
+    let country = document.getElementById("country").value.trim();
+    const city = document.getElementById("city").value.trim();
 
     if (country && city) {
         // Use the Geocoding API to get latitude and longitude for the specified city and country
@@ -217,7 +217,10 @@ function findRehabilitationCenters(location, lat = null, lng = null, useCurrentL
 
 // Function to Display Hotline Info
 function displayHotlineInfo(country) {
+    country = country.trim(); // Trim any extra spaces
     const hotlineInfo = hotlines[country];
+    console.log(`Country: ${country}`); // Log the country for debugging
+    console.log(`Hotline Info: ${JSON.stringify(hotlineInfo)}`); // Log the hotline info for debugging
     const resultsDiv = document.getElementById("results");
     if (hotlineInfo) {
         resultsDiv.innerHTML = `<h3>Contact Information for Immediate Support:</h3>
