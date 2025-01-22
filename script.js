@@ -1,7 +1,7 @@
 // Google Maps Places API Key
-//const GOOGLE_API_KEY = "AIzaSyADSzUCZcZXYQr7DGCQDvWT3kpWzX1XzkM";
+const GOOGLE_API_KEY = "AIzaSyADSzUCZcZXYQr7DGCQDvWT3kpWzX1XzkM";
 //const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
-const GOOGLE_API_KEY = "${GOOGLE_API_KEY}";
+//const GOOGLE_API_KEY = "${GOOGLE_API_KEY}";
 
 
 let map;
@@ -186,8 +186,8 @@ function findRehabilitationCenters(location, lat = null, lng = null, useCurrentL
 
     console.log("Request URL:", url); // Log the request URL for debugging
 
-    //fetch(`/api/places?url=${encodeURIComponent(url)}`)
-    fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=drug+rehabilitation&key=${GOOGLE_API_KEY}`)
+    fetch(`/api/places?url=${encodeURIComponent(url)}`)
+    //fetch(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=drug+rehabilitation&key=${GOOGLE_API_KEY}`)
         .then((response) => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
