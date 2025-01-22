@@ -1,6 +1,8 @@
 // Google Maps Places API Key
 //const GOOGLE_API_KEY = "AIzaSyADSzUCZcZXYQr7DGCQDvWT3kpWzX1XzkM";
-const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+//const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+const GOOGLE_API_KEY = "${GOOGLE_API_KEY}";
+
 
 let map;
 let markers = [];
